@@ -1,0 +1,2822 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/19/2018 9:25:22 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="AG-ITA-MTROMP1"
+  DTS:CreatorName="SETARNV\mark.tromp"
+  DTS:DTSID="{6EA30BDA-4FB5-4C93-AB06-9365A71FF769}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="B2B 02 Service"
+  DTS:PackageType="5"
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{ED504945-1797-4EAC-9A94-698E819D7E68}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\B2C Service"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DC89464D-3368-4B44-A9B6-7BE8AB5F53FB}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="B2C Service"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\B2C Service\B2B_Service"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="B2B_Service"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[B2B_Service]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\B2C Service\B2B_Service.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[BILLING_ACCOUNT_NO]"
+                      cachedDataType="i4"
+                      cachedName="BILLING_ACCOUNT_NO"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[SERVICE_ACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_ACTIVE_DATE"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[SERVICE_INACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_INACTIVE_DATE"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[EXTERNAL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="144"
+                      cachedName="EXTERNAL_ID"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="38"
+                      cachedName="SERVICE_NAME_ID"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_NAME"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_BRAND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="EQUIPMENT_BRAND"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_MODEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="EQUIPMENT_MODEL"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]" />
+                    <inputColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].Columns[SUBSCR_NO]"
+                      cachedDataType="numeric"
+                      cachedName="SUBSCR_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      name="BILLING_ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      name="SERVICE_NAME_ID" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\B2C Service\B2B_Service.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\B2C Service\B2B_Service.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\B2C Service\B2B_Service.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\B2C Service\B2B_Service_02"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="B2B_Service_02"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[B2B_Service_02]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\B2C Service\B2B_Service_02.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      length="144"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      length="38"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      length="240"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      length="100"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      length="100"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      name="BILLING_ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      name="SERVICE_NAME_ID" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\B2C Service.Paths[OLE DB Source Output]"
+              endId="Package\B2C Service\B2B_Service.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\B2C Service\B2B_Service_02.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Kenan Services"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E4EC992C-DB95-458F-897F-749D083AF1CA}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Kenan Services"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Kenan Services\Kenan Service"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Kenan Service"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select
+   (case
+      when c.account_category = 1  then 'B2B'
+      when c.account_category = 2 then 'B2C'
+      when c.account_category = 3 then 'B2G'
+      else 'Other'
+    end) Customer_Profile,
+   s.subscr_no,
+   c.account_no Billing_Account_No,
+   trunc(s.service_active_dt) Service_Active_Date, 
+   trunc(s.service_inactive_dt) Service_Inactive_Date,
+   subqry2.External_ID, 
+   subqry1.Service_Name_ID,
+   subqry1.Service_Name,
+   '' Equipment_Brand,
+   '' Equipment_Model
+from
+   service s,
+   cmf c, 
+   (
+     SELECT s.SUBSCR_NO, s.SUBSCR_NO_RESETS, s.EMF_CONFIG_ID Service_Name_ID, eciv.DISPLAY_VALUE Service_Name
+     FROM 
+       SERVICE s, EMF_CONFIG_ID_VALUES eciv
+     WHERE
+       s.EMF_CONFIG_ID  = eciv.EMF_CONFIG_ID
+       AND eciv.LANGUAGE_CODE=1             
+     ORDER BY s.SUBSCR_NO, s.SUBSCR_NO_RESETS
+   ) subqry1,         
+  (
+    select s.subscr_no, s.subscr_no_resets, ciemv.external_id, ciemv.external_id_type 
+    from
+      service s, service_key sk, customer_id_equip_map_view ciemv
+    where
+      s.subscr_no=sk.subscr_no
+      and s.subscr_no_resets=sk.subscr_no_resets
+      and sk.display_ciem_view_id=ciemv.view_id
+    order by 1, 2 
+  ) subqry2 
+where
+  s.parent_account_no=c.account_no
+  and s.subscr_no=subqry1.subscr_no(+)
+  and s.subscr_no_resets=subqry1.subscr_no_resets(+)
+  and s.subscr_no=subqry2.subscr_no(+)
+  and s.subscr_no_resets=subqry2.subscr_no_resets(+)
+  and (s.service_inactive_dt is null or (trunc(s.service_inactive_dt) &gt;= trunc(sysdate) and trunc(s.service_active_dt) &lt;= trunc(sysdate)))
+  and (c.date_inactive is null or (trunc(c.date_inactive) &gt;= trunc(sysdate) and trunc(c.date_active) &lt;= trunc(sysdate)))
+  and c.account_category in (1, 2, 3)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Kenan Services\Kenan Service.Connections[OleDbConnection]"
+                  connectionManagerID="{B0706AEC-7A73-49F9-A7E0-34539E496B69}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[prod FX4GGDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_PROFILE]"
+                      length="5"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]"
+                      name="CUSTOMER_PROFILE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      length="144"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      length="240"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      length="32"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      length="32"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CUSTOMER_PROFILE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="BILLING_ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="numeric"
+                      name="SERVICE_NAME_ID"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_PROFILE]"
+                      name="CUSTOMER_PROFILE" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Kenan Services\staging Kenan Service"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging Kenan Service"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[KENAN_SERVICE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Kenan Services\staging Kenan Service.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[CUSTOMER_PROFILE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CUSTOMER_PROFILE"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_PROFILE]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[BILLING_ACCOUNT_NO]"
+                      cachedDataType="numeric"
+                      cachedName="BILLING_ACCOUNT_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[SERVICE_ACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_ACTIVE_DATE"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[SERVICE_INACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_INACTIVE_DATE"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[EXTERNAL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="144"
+                      cachedName="EXTERNAL_ID"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME_ID]"
+                      cachedDataType="numeric"
+                      cachedName="SERVICE_NAME_ID"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_NAME"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_BRAND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="EQUIPMENT_BRAND"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_MODEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="EQUIPMENT_MODEL"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].Columns[SUBSCR_NO]"
+                      cachedDataType="numeric"
+                      cachedName="SUBSCR_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CUSTOMER_PROFILE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="BILLING_ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      name="SERVICE_NAME_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Kenan Services\staging Kenan Service.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Kenan Services\staging Kenan Service.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\staging Kenan Service.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Kenan Services\staging Kenan Service.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Kenan Services.Paths[OLE DB Source Output]"
+              endId="Package\Extract Kenan Services\staging Kenan Service.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Kenan Services\Kenan Service.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Service B2B 01"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BE5056AF-E8B0-4267-9BA0-AC5AA6946B6D}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Service B2B 01"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Service B2B 01\Kenan Services"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Kenan Services"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * 
+from [staging].[KENAN_SERVICE]
+where customer_profile in ( 'B2B', 'B2G')</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Service B2B 01\Kenan Services.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_PROFILE]"
+                      length="5"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]"
+                      name="CUSTOMER_PROFILE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      length="144"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      length="38"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      length="240"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      length="100"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      length="100"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CUSTOMER_PROFILE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="BILLING_ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      name="SERVICE_NAME_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_PROFILE]"
+                      name="CUSTOMER_PROFILE" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="numeric"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Service B2B 01\Services B2B 01"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Services B2B 01"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[B2B_Service_01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Service B2B 01\Services B2B 01.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[CUSTOMER_PROFILE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CUSTOMER_PROFILE"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_PROFILE]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[BILLING_ACCOUNT_NO]"
+                      cachedDataType="numeric"
+                      cachedName="BILLING_ACCOUNT_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[SERVICE_ACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_ACTIVE_DATE"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[SERVICE_INACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_INACTIVE_DATE"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[EXTERNAL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="144"
+                      cachedName="EXTERNAL_ID"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="38"
+                      cachedName="SERVICE_NAME_ID"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_NAME"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_BRAND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="EQUIPMENT_BRAND"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_MODEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="EQUIPMENT_MODEL"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]" />
+                    <inputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].Columns[SUBSCR_NO]"
+                      cachedDataType="numeric"
+                      cachedName="SUBSCR_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CUSTOMER_PROFILE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      name="BILLING_ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      name="SERVICE_NAME_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Service B2B 01\Services B2B 01.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 01\Services B2B 01.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Service B2B 01\Services B2B 01.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 01\Services B2B 01.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Service B2B 01.Paths[OLE DB Source Output]"
+              endId="Package\Service B2B 01\Services B2B 01.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Service B2B 01\Kenan Services.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Service B2B 02"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4A3A16A5-0085-471F-9BE9-97A5D8FBDD26}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Service B2B 02"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Service B2B 02\B2B Services 01"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="B2B Services 01"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        S.CUSTOMER_PROFILE, S.SUBSCR_NO, S.BILLING_ACCOUNT_NO, S.SERVICE_ACTIVE_DATE, S.SERVICE_INACTIVE_DATE, S.EXTERNAL_ID, S.SERVICE_NAME_ID, S.SERVICE_NAME, S.EQUIPMENT_BRAND, 
+                         S.EQUIPMENT_MODEL
+FROM            staging.B2B_Service_01 AS S INNER JOIN
+                         B2B_Profile AS P ON S.BILLING_ACCOUNT_NO = P.ACCOUNT_NO</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Service B2B 02\B2B Services 01.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_PROFILE]"
+                      length="5"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[CUSTOMER_PROFILE]"
+                      name="CUSTOMER_PROFILE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      length="144"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      length="38"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      length="240"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      length="100"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      length="100"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CUSTOMER_PROFILE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      name="BILLING_ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      name="SERVICE_NAME_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_PROFILE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_PROFILE]"
+                      name="CUSTOMER_PROFILE" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      dataType="numeric"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SUBSCR_NO]"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[BILLING_ACCOUNT_NO]"
+                      name="BILLING_ACCOUNT_NO" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_ACTIVE_DATE]"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DATE]"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[EXTERNAL_ID]"
+                      name="EXTERNAL_ID" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME_ID]"
+                      name="SERVICE_NAME_ID" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_NAME]"
+                      name="SERVICE_NAME" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      name="EQUIPMENT_BRAND" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      name="EQUIPMENT_MODEL" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Service B2B 02\staging Service B2C 02"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging Service B2C 02"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[B2B_Service_02]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Service B2B 02\staging Service B2C 02.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[BILLING_ACCOUNT_NO]"
+                      cachedDataType="i4"
+                      cachedName="BILLING_ACCOUNT_NO"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[BILLING_ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[SERVICE_ACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_ACTIVE_DATE"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_ACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[SERVICE_INACTIVE_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SERVICE_INACTIVE_DATE"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DATE]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[EXTERNAL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="144"
+                      cachedName="EXTERNAL_ID"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EXTERNAL_ID]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="38"
+                      cachedName="SERVICE_NAME_ID"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_NAME_ID]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[SERVICE_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_NAME"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_NAME]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_BRAND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="EQUIPMENT_BRAND"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_MODEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="EQUIPMENT_MODEL"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]" />
+                    <inputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].Columns[SUBSCR_NO]"
+                      cachedDataType="numeric"
+                      cachedName="SUBSCR_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      lineageId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output].Columns[SUBSCR_NO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      dataType="i4"
+                      name="BILLING_ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_ACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="SERVICE_INACTIVE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[EXTERNAL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="144"
+                      name="EXTERNAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME_ID]"
+                      dataType="wstr"
+                      length="38"
+                      name="SERVICE_NAME_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_BRAND" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input].ExternalColumns[SUBSCR_NO]"
+                      dataType="numeric"
+                      name="SUBSCR_NO"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Service B2B 02\staging Service B2C 02.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 02\staging Service B2C 02.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Service B2B 02\staging Service B2C 02.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Service B2B 02\staging Service B2C 02.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Service B2B 02.Paths[OLE DB Source Output]"
+              endId="Package\Service B2B 02\staging Service B2C 02.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Service B2B 02\B2B Services 01.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Staging Tables"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7317D438-517F-4600-B699-7E176D4B5111}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Staging Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}"
+          SQLTask:SqlStatementSource="truncate table staging.KENAN_SERVICE&#xA;&#xA;&#xA;&#xA;truncate table staging.B2B_Service_01&#xA;&#xA;truncate table staging.B2B_Service_02&#xA;&#xA;truncate table B2B_Service&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Brand and Model"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0C41DEA3-D0F9-4602-9D8A-1D6F480C3DFC}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Brand and Model"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}"
+          SQLTask:SqlStatementSource="update S&#xA;set S.EQUIPMENT_BRAND = DE.MANUFACTURER,&#xA;&#x9;S.EQUIPMENT_MODEL = DE.MODEL&#xA;FROM [staging].[B2B_Service_02] S&#xA;INNER JOIN [staging].[DevicesExtract] DE ON s.external_id = de.external_id&#xA;and s.billing_account_no = de.account_no&#xA;and s.subscr_no = de.subscr_no&#xA;&#xA;update [staging].[B2B_Service_02]&#xA;set  equipment_brand = replace(equipment_brand, ',', ''),&#xA;equipment_model = replace(equipment_model, ',', '')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E50CD933-448A-40D1-8CD6-8458CE1A7594}"
+      DTS:From="Package\Truncate Staging Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extract Kenan Services" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{916BCB69-814C-4086-9871-84DFE05BC860}"
+      DTS:From="Package\Extract Kenan Services"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Service B2B 01" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{FC670D1E-58E5-4D7F-93A3-1E8208F61CFC}"
+      DTS:From="Package\Service B2B 01"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Service B2B 02" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{039FB9BF-954D-4B7E-8966-D10DA1983CA0}"
+      DTS:From="Package\Service B2B 02"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Update Brand and Model" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{74090A84-6EAA-47BE-A778-AF92445F2266}"
+      DTS:From="Package\Update Brand and Model"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\B2C Service" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\B2C Service"
+          TopLeft="740,468" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Extract Kenan Services"
+          TopLeft="243,172" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Service B2B 01"
+          TopLeft="318,288" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Service B2B 02"
+          TopLeft="338,402" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Truncate Staging Tables"
+          TopLeft="236,56" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Update Brand and Model"
+          TopLeft="332,540" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="334.25,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74"
+              Start="0,0"
+              End="0,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="336,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.5,74"
+              Start="0,0"
+              End="56.5,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="52.5,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.5,37"
+                    Point2="56.5,37"
+                    Point3="56.5,41" />
+                  <mssgle:LineSegment
+                    End="56.5,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="392.5,330">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20,72"
+              Start="0,0"
+              End="20,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="16,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,36"
+                    Point2="20,36"
+                    Point3="20,40" />
+                  <mssgle:LineSegment
+                    End="20,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="412.5,444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.8333333333333,96"
+              Start="0,0"
+              End="-13.8333333333333,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.1336032388664" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.1336032388664"
+                    Point2="0,57.1336032388664"
+                    Point3="-4,57.1336032388664" />
+                  <mssgle:LineSegment
+                    End="-9.83333333333331,57.1336032388664" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.83333333333331,57.1336032388664"
+                    Point2="-13.8333333333333,57.1336032388664"
+                    Point3="-13.8333333333333,61.1336032388664" />
+                  <mssgle:LineSegment
+                    End="-13.8333333333333,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="461.333333333333,540">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="346.166666666667,-30"
+              Start="0,0"
+              End="346.166666666667,-22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-8.14574898785425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-8.14574898785425"
+                    Point2="0,-12.1457489878543"
+                    Point3="4,-12.1457489878543" />
+                  <mssgle:LineSegment
+                    End="342.166666666667,-12.1457489878543" />
+                  <mssgle:CubicBezierSegment
+                    Point1="342.166666666667,-12.1457489878543"
+                    Point2="346.166666666667,-12.1457489878543"
+                    Point3="346.166666666667,-16.1457489878543" />
+                  <mssgle:LineSegment
+                    End="346.166666666667,-22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\B2C Service">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\B2C Service\B2B_Service"
+          TopLeft="420,333" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\B2C Service\B2B_Service_02"
+          TopLeft="309,49" />
+        <EdgeLayout
+          Id="Package\B2C Service.Paths[OLE DB Source Output]"
+          TopLeft="386,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.5,242"
+              Start="0,0"
+              End="102.5,234.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,117" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,117"
+                    Point2="0,121"
+                    Point3="4,121" />
+                  <mssgle:LineSegment
+                    End="98.5,121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.5,121"
+                    Point2="102.5,121"
+                    Point3="102.5,125" />
+                  <mssgle:LineSegment
+                    End="102.5,234.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\B2C Service\B2B_Service_02">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\B2C Service\B2B_Service">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Extract Kenan Services">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Extract Kenan Services\staging Kenan Service"
+          TopLeft="399,517" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Extract Kenan Services\Kenan Service"
+          TopLeft="235,96" />
+        <EdgeLayout
+          Id="Package\Extract Kenan Services.Paths[OLE DB Source Output]"
+          TopLeft="307.5,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183,379"
+              Start="0,0"
+              End="183,371.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,185.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,185.5"
+                    Point2="0,189.5"
+                    Point3="4,189.5" />
+                  <mssgle:LineSegment
+                    End="179,189.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179,189.5"
+                    Point2="183,189.5"
+                    Point3="183,193.5" />
+                  <mssgle:LineSegment
+                    End="183,371.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Kenan Services\Kenan Service">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Kenan Services\staging Kenan Service">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Service B2B 01">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Service B2B 01\Services B2B 01"
+          TopLeft="374,350" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Service B2B 01\Kenan Services"
+          TopLeft="249,72" />
+        <EdgeLayout
+          Id="Package\Service B2B 01.Paths[OLE DB Source Output]"
+          TopLeft="324,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127,236"
+              Start="0,0"
+              End="127,228.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,114" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,114"
+                    Point2="0,118"
+                    Point3="4,118" />
+                  <mssgle:LineSegment
+                    End="123,118" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123,118"
+                    Point2="127,118"
+                    Point3="127,122" />
+                  <mssgle:LineSegment
+                    End="127,228.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Service B2B 01\Kenan Services">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Service B2B 01\Services B2B 01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Service B2B 02">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Service B2B 02\staging Service B2C 02"
+          TopLeft="406,404" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Service B2B 02\B2B Services 01"
+          TopLeft="303,97" />
+        <EdgeLayout
+          Id="Package\Service B2B 02.Paths[OLE DB Source Output]"
+          TopLeft="380,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119.5,265"
+              Start="0,0"
+              End="119.5,257.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,128.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,128.5"
+                    Point2="0,132.5"
+                    Point3="4,132.5" />
+                  <mssgle:LineSegment
+                    End="115.5,132.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="115.5,132.5"
+                    Point2="119.5,132.5"
+                    Point3="119.5,136.5" />
+                  <mssgle:LineSegment
+                    End="119.5,257.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Service B2B 02\B2B Services 01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Service B2B 02\staging Service B2C 02">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

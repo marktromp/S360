@@ -1,0 +1,1144 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/6/2018 3:24:10 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="AG-ITA-MTROMP1"
+  DTS:CreatorName="SETARNV\mark.tromp"
+  DTS:DTSID="{C8B32F91-A9AE-4847-9E56-4D0E5051395A}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="B2B 04 Invoice"
+  DTS:PackageType="5"
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{F6981882-5A43-4850-B6D1-862BACD434BC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\cdm B2C Invoice"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6C67A27A-EDD0-4C82-8934-D7EEA362A442}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="cdm B2C Invoice"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\cdm B2C Invoice\cdm B2C Invoice"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="cdm B2C Invoice"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[B2B_Invoice]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\cdm B2C Invoice\cdm B2C Invoice.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].Columns[STATEMENT_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="STATEMENT_DATE"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[STATEMENT_DATE]"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[STATEMENT_DATE]" />
+                    <inputColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].Columns[INDEX_BILL_REF]"
+                      cachedDataType="i4"
+                      cachedName="INDEX_BILL_REF"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[INDEX_BILL_REF]"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[INDEX_BILL_REF]" />
+                    <inputColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].Columns[AMOUNT_DUE]"
+                      cachedDataType="numeric"
+                      cachedName="AMOUNT_DUE"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT_DUE]"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[AMOUNT_DUE]" />
+                    <inputColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].Columns[dcACCOUNT_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="dcACCOUNT_NO"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      lineageId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Output].Columns[dcACCOUNT_NO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      name="STATEMENT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      name="INDEX_BILL_REF" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ACCOUNT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="BILLING_ACCOUNT_NO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\cdm B2C Invoice\cdm B2C Invoice.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\cdm B2C Invoice.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\cdm B2C Invoice.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\cdm B2C Invoice.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\cdm B2C Invoice\Data Conversion"
+              componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\cdm B2C Invoice\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\cdm B2C Invoice\Data Conversion.Inputs[Data Conversion Input].Columns[ACCOUNT_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ACCOUNT_NO"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\cdm B2C Invoice\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Output].Columns[dcACCOUNT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Output].Columns[dcACCOUNT_NO]"
+                      name="dcACCOUNT_NO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\cdm B2C Invoice\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\cdm B2C Invoice\FPL_Invoice"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="FPL_Invoice"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [staging].[PRINT_LITE_INVOICE]
+where ACCOUNT_NO in (
+select ACCOUNT_NO from [B2B_Profile]
+where 1=1
+and year(statement_date) = 2021
+and month(statement_date) in (3,4,5,6,7,8)
+AND AMOUNT_DUE &gt; 0)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\cdm B2C Invoice\FPL_Invoice.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      length="30"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[STATEMENT_DATE]"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[STATEMENT_DATE]"
+                      name="STATEMENT_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[INDEX_BILL_REF]"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[INDEX_BILL_REF]"
+                      name="INDEX_BILL_REF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT_DUE]"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].Columns[AMOUNT_DUE]"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      name="STATEMENT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      name="INDEX_BILL_REF" />
+                    <externalMetadataColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[STATEMENT_DATE]"
+                      name="STATEMENT_DATE" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[INDEX_BILL_REF]"
+                      name="INDEX_BILL_REF" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[AMOUNT_DUE]"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\cdm B2C Invoice.Paths[Data Conversion Output]"
+              endId="Package\cdm B2C Invoice\cdm B2C Invoice.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\cdm B2C Invoice\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\cdm B2C Invoice.Paths[OLE DB Source Output]"
+              endId="Package\cdm B2C Invoice\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\cdm B2C Invoice\FPL_Invoice.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BE844E88-8DAC-40DC-8869-B03092FFD256}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}"
+          SQLTask:SqlStatementSource="truncate table staging.PRINT_LITE_INVOICE&#xA;&#xA;truncate table B2B_Invoice" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract FXL Invoices"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3D0F4624-4E96-4459-B65C-84D0992DCF50}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract FXL Invoices"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract FXL Invoices\OLE DB Destination"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[PRINT_LITE_INVOICE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract FXL Invoices\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{DAE38F1A-F4A4-4970-A4C7-6C19D46F35AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[S360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ACCOUNT_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ACCOUNT_NO"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NO]"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATEMENT_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="STATEMENT_DATE"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATEMENT_DATE]"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATEMENT_DATE]" />
+                    <inputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INDEX_BILL_REF]"
+                      cachedDataType="i4"
+                      cachedName="INDEX_BILL_REF"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INDEX_BILL_REF]"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[INDEX_BILL_REF]" />
+                    <inputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AMOUNT_DUE]"
+                      cachedDataType="numeric"
+                      cachedName="AMOUNT_DUE"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT_DUE]"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[AMOUNT_DUE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      name="STATEMENT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      name="INDEX_BILL_REF" />
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract FXL Invoices\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract FXL Invoices\OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select ACCOUNT_NO, STATEMENT_DATE, INDEX_BILL_REF, AMOUNT_DUE
+from statement
+where 1=1
+and year(statement_date) = 2021
+and month(statement_date) in (3,4,5,6,7,8)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract FXL Invoices\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{D9E8251C-1C73-4D6D-A916-AE02C8413EB5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[prod BP_INVOICEdb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      length="30"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATEMENT_DATE]"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATEMENT_DATE]"
+                      name="STATEMENT_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INDEX_BILL_REF]"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[INDEX_BILL_REF]"
+                      name="INDEX_BILL_REF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT_DUE]"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].Columns[AMOUNT_DUE]"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      dataType="i4"
+                      name="ACCOUNT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      name="STATEMENT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      name="INDEX_BILL_REF" />
+                    <externalMetadataColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      dataType="i4"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATEMENT_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATEMENT_DATE]"
+                      name="STATEMENT_DATE" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INDEX_BILL_REF]"
+                      dataType="i4"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INDEX_BILL_REF]"
+                      name="INDEX_BILL_REF" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AMOUNT_DUE]"
+                      dataType="numeric"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AMOUNT_DUE]"
+                      name="AMOUNT_DUE"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract FXL Invoices.Paths[OLE DB Source Output]"
+              endId="Package\Extract FXL Invoices\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract FXL Invoices\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E70E7F3E-1712-4CDA-B106-4CB6E6D0457B}"
+      DTS:From="Package\Extract FXL Invoices"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\cdm B2C Invoice" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{EE1E3DF0-74EB-43AB-80B8-65324F6802E4}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Extract FXL Invoices" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\cdm B2C Invoice"
+          TopLeft="281,239" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="58,60" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Extract FXL Invoices"
+          TopLeft="139,137" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="226,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134,60"
+              Start="0,0"
+              End="134,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="130,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="130,30"
+                    Point2="134,30"
+                    Point3="134,34" />
+                  <mssgle:LineSegment
+                    End="134,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="139.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.5,35"
+              Start="0,0"
+              End="86.5,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="4,17.5" />
+                  <mssgle:LineSegment
+                    End="82.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.5,17.5"
+                    Point2="86.5,17.5"
+                    Point3="86.5,21.5" />
+                  <mssgle:LineSegment
+                    End="86.5,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\cdm B2C Invoice">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,42"
+          Id="Package\cdm B2C Invoice\FPL_Invoice"
+          TopLeft="316,73" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\cdm B2C Invoice\cdm B2C Invoice"
+          TopLeft="486,377" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\cdm B2C Invoice\Data Conversion"
+          TopLeft="350,222" />
+        <EdgeLayout
+          Id="Package\cdm B2C Invoice.Paths[OLE DB Source Output]"
+          TopLeft="384,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44,107"
+              Start="0,0"
+              End="44,99.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.5"
+                    Point2="0,53.5"
+                    Point3="4,53.5" />
+                  <mssgle:LineSegment
+                    End="40,53.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40,53.5"
+                    Point2="44,53.5"
+                    Point3="44,57.5" />
+                  <mssgle:LineSegment
+                    End="44,99.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cdm B2C Invoice.Paths[Data Conversion Output]"
+          TopLeft="428,264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137,113"
+              Start="0,0"
+              End="137,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.5"
+                    Point2="0,56.5"
+                    Point3="4,56.5" />
+                  <mssgle:LineSegment
+                    End="133,56.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133,56.5"
+                    Point2="137,56.5"
+                    Point3="137,60.5" />
+                  <mssgle:LineSegment
+                    End="137,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\cdm B2C Invoice\FPL_Invoice">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\cdm B2C Invoice\cdm B2C Invoice">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Extract FXL Invoices">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Extract FXL Invoices\OLE DB Destination"
+          TopLeft="425,366" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Extract FXL Invoices\OLE DB Source"
+          TopLeft="281,80" />
+        <EdgeLayout
+          Id="Package\Extract FXL Invoices.Paths[OLE DB Source Output]"
+          TopLeft="356,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154.5,244"
+              Start="0,0"
+              End="154.5,236.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,118" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,118"
+                    Point2="0,122"
+                    Point3="4,122" />
+                  <mssgle:LineSegment
+                    End="150.5,122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="150.5,122"
+                    Point2="154.5,122"
+                    Point3="154.5,126" />
+                  <mssgle:LineSegment
+                    End="154.5,236.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract FXL Invoices\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract FXL Invoices\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Kenan"
+  DTS:DTSID="{A32C9378-D2F2-410C-9EBA-4FAE9C8D4A80}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=FX4GGDB;User ID=REPORTINGSERVICES;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAn2a1/qF9FU6ediORcilcHwAAAAACAAAAAAADZgAAwAAAABAAAAA2yGptuXyv0f6q7aJqJiDcAAAAAASAAACgAAAAEAAAABdzBKgg+vrZMv9U2XR/iNR4AAAAiJebA4gbliBFvQt7sS1N01TiGjn2uCo/ssw86f7gGPWnETCIh+08kCunD42i8XIOKjDrnkRsmaDuswpdskOfm9uifaVk5WryeuO30vGEwWQb/6Hh4ARv38zWY8MiZ4CpKwKXHGy7pHcOjVbsvDQ4zp96o48b6ALLFAAAAILJ57ADK5SswLIaPAaYdXEFVdmS</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
